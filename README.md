@@ -10,9 +10,9 @@ The assembly was written and tested in .Net 4.6.2.
 ```csharp
 public void Test()
 {
-    ICrypter cryptor = new Crypter();
+	ICrypter cryptor = new Crypter();
 	string salt = cryptor.GetRandomSalt();
-    string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
+	string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
 	string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt);
 }
 ```
