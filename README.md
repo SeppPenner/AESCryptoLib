@@ -22,6 +22,8 @@ public void Test()
 }
 ```
 
+The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/).
+
 Change history
 --------------
 
