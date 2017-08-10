@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>HaemmerElectronics.SeppPenner.AESCryptoLib</id>
+    <version>1.0.0.0</version>
+    <authors>SeppPenner</authors>
+    <owners>SeppPenner</owners>
+    <licenseUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/SeppPenner/AESCryptoLib/</projectUrl>
+    <iconUrl>https://drive.google.com/open?id=0B7FLEm_FBeJFLVpmUlNqNk9ublE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+		AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.6.2.
+	</description>
+    <releaseNotes>
+		Version 1.0.0.0 (2017-05-16) : 1.0 release.
+	</releaseNotes>
+    <copyright>Copyright © Hämmer Electronics 2017</copyright>
+    <tags>c# aes csharp crypto aescrypt secure security</tags>
+  </metadata>
+  <files>
+		<file src="README.md" target="lib/" />
+		<file src="License.txt" target="lib/" />
+		<file src="AESCryptoLib.dll" target="lib/" />
+		<file src="AESCryptoLib.pdb" target="lib/" />
+    </files>
+</package>
