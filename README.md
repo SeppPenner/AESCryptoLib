@@ -27,4 +27,5 @@ The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectr
 Change history
 --------------
 
+* **Version 1.0.0.1 (2017-08-16)** : Updated nuget project file and added documentation.
 * **Version 1.0.0.0 (2017-05-16)** : 1.0 release.
