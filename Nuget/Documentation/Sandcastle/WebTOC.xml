@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="305dfd86-c189-43aa-b64b-acc093e4207e" Title="AESCryptoLib" Url="html/31a588c9-4dc6-78b5-4304-f7d47f1dd262.htm">
+    <HelpTOCNode Title="AesKeySize Enumeration" Url="html/97eabc99-6d31-9b14-f938-9efe6c246268.htm" />
+    <HelpTOCNode Id="2274e4ad-dc0d-4600-8ed6-ffdf0e7ef500" Title="Crypter Class" Url="html/a9099851-2f5a-ea43-16ee-2c6e03d9a76e.htm">
+      <HelpTOCNode Title="Crypter Constructor " Url="html/cfc4e544-6ebd-e789-069d-92dbb181ecb1.htm" />
+      <HelpTOCNode Id="5a5a33ac-5678-4a41-bee5-74d27987fe63" Title="Crypter Methods" Url="html/3cbeda08-f6e0-8590-7186-6eef817a9e85.htm">
+        <HelpTOCNode Title="Decrypt Method " Url="html/a65a6fe4-8c59-7eb5-0090-643fb25fb53e.htm" />
+        <HelpTOCNode Title="Encrypt Method " Url="html/c69fbab1-0f3f-588e-c01e-b3ca1a0b8b0b.htm" />
+        <HelpTOCNode Title="GetRandomSalt Method " Url="html/4498ae9a-f34f-3136-2bd6-d6e231ace586.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2593a43d-72cd-446c-9a9b-3af55ee779de" Title="ICrypter Interface" Url="html/4ba398de-95f5-7fea-c855-95ce91097763.htm">
+      <HelpTOCNode Id="f13267b1-e6f9-40c7-aa63-9cde2fa9e649" Title="ICrypter Methods" Url="html/7ca506c8-80f2-7c66-4dee-bdf77a65f568.htm">
+        <HelpTOCNode Title="Decrypt Method " Url="html/d9d3cc92-bd61-f325-50c3-138a0045532d.htm" />
+        <HelpTOCNode Title="Encrypt Method " Url="html/14f2cdae-ac3d-9f8c-09f1-6a2c229e6d30.htm" />
+        <HelpTOCNode Title="GetRandomSalt Method " Url="html/1b2147ab-76b8-b3ac-6e47-4be21d6c7fed.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

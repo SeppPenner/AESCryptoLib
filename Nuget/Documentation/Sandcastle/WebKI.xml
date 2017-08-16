@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AESCryptoLib namespace" Url="html/31a588c9-4dc6-78b5-4304-f7d47f1dd262.htm" />
+  <HelpKINode Title="AESCryptoLib.AesKeySize enumeration" Url="html/97eabc99-6d31-9b14-f938-9efe6c246268.htm" />
+  <HelpKINode Title="AESCryptoLib.Crypter class" Url="html/a9099851-2f5a-ea43-16ee-2c6e03d9a76e.htm" />
+  <HelpKINode Title="AESCryptoLib.ICrypter interface" Url="html/4ba398de-95f5-7fea-c855-95ce91097763.htm" />
+  <HelpKINode Title="AesKeySize enumeration" Url="html/97eabc99-6d31-9b14-f938-9efe6c246268.htm" />
+  <HelpKINode Title="Crypter class">
+    <HelpKINode Title="Crypter Class" Url="html/a9099851-2f5a-ea43-16ee-2c6e03d9a76e.htm" />
+    <HelpKINode Title="about Crypter class" Url="html/a9099851-2f5a-ea43-16ee-2c6e03d9a76e.htm" />
+    <HelpKINode Title="constructor" Url="html/cfc4e544-6ebd-e789-069d-92dbb181ecb1.htm" />
+    <HelpKINode Title="methods" Url="html/3cbeda08-f6e0-8590-7186-6eef817a9e85.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Crypter.Crypter constructor" Url="html/cfc4e544-6ebd-e789-069d-92dbb181ecb1.htm" />
+  <HelpKINode Title="Crypter.Decrypt method" Url="html/a65a6fe4-8c59-7eb5-0090-643fb25fb53e.htm" />
+  <HelpKINode Title="Crypter.Encrypt method" Url="html/c69fbab1-0f3f-588e-c01e-b3ca1a0b8b0b.htm" />
+  <HelpKINode Title="Crypter.GetRandomSalt method" Url="html/4498ae9a-f34f-3136-2bd6-d6e231ace586.htm" />
+  <HelpKINode Title="Decrypt method">
+    <HelpKINode Title="Crypter.Decrypt Method " Url="html/a65a6fe4-8c59-7eb5-0090-643fb25fb53e.htm" />
+    <HelpKINode Title="ICrypter.Decrypt Method " Url="html/d9d3cc92-bd61-f325-50c3-138a0045532d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Encrypt method">
+    <HelpKINode Title="Crypter.Encrypt Method " Url="html/c69fbab1-0f3f-588e-c01e-b3ca1a0b8b0b.htm" />
+    <HelpKINode Title="ICrypter.Encrypt Method " Url="html/14f2cdae-ac3d-9f8c-09f1-6a2c229e6d30.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetRandomSalt method">
+    <HelpKINode Title="Crypter.GetRandomSalt Method " Url="html/4498ae9a-f34f-3136-2bd6-d6e231ace586.htm" />
+    <HelpKINode Title="ICrypter.GetRandomSalt Method " Url="html/1b2147ab-76b8-b3ac-6e47-4be21d6c7fed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ICrypter interface">
+    <HelpKINode Title="ICrypter Interface" Url="html/4ba398de-95f5-7fea-c855-95ce91097763.htm" />
+    <HelpKINode Title="about ICrypter interface" Url="html/4ba398de-95f5-7fea-c855-95ce91097763.htm" />
+    <HelpKINode Title="methods" Url="html/7ca506c8-80f2-7c66-4dee-bdf77a65f568.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ICrypter.Decrypt method" Url="html/d9d3cc92-bd61-f325-50c3-138a0045532d.htm" />
+  <HelpKINode Title="ICrypter.Encrypt method" Url="html/14f2cdae-ac3d-9f8c-09f1-6a2c229e6d30.htm" />
+  <HelpKINode Title="ICrypter.GetRandomSalt method" Url="html/1b2147ab-76b8-b3ac-6e47-4be21d6c7fed.htm" />
+  <HelpKINode Title="Strong enumeration member" Url="html/97eabc99-6d31-9b14-f938-9efe6c246268.htm" />
+  <HelpKINode Title="Weak enumeration member" Url="html/97eabc99-6d31-9b14-f938-9efe6c246268.htm" />
+</HelpKI>
