@@ -2,7 +2,7 @@ AESCryptoLib
 ====================================
 
 AESCryptoLib is an assembly/ library to encrypt strings with AES.
-The assembly was written and tested in .Net 4.7.
+The assembly was written and tested in .Net 4.8.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a3ptt999etgpfutv?svg=true)](https://ci.appveyor.com/project/SeppPenner/aescryptolib)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/AESCryptoLib.svg)](https://github.com/SeppPenner/AESCryptoLib/issues)
@@ -11,15 +11,24 @@ The assembly was written and tested in .Net 4.7.
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/SeppPenner/AESCryptoLib/master/License.txt)
 [![Nuget](https://img.shields.io/badge/AESCryptoLib-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.AESCryptoLib.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
+[![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/AESCryptoLib/badge.svg)](https://snyk.io/test/github/SeppPenner/AESCryptoLib)
+
+## Available for
+* NetFramework 4.5
+* NetFramework 4.6
+* NetFramework 4.6.2
+* NetFramework 4.7
+* NetFramework 4.7.2
+* NetFramework 4.8
 
 ## Basic usage:
 ```csharp
 public void Test()
 {
-	ICrypter cryptor = new Crypter();
-	string salt = cryptor.GetRandomSalt();
-	string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
-	string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt);
+    ICrypter cryptor = new Crypter();
+    string salt = cryptor.GetRandomSalt();
+    string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
+    string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt);
 }
 ```
 
@@ -28,6 +37,7 @@ The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectr
 Change history
 --------------
 
+* **Version 1.0.0.4 (2019-05-05)** : Updated .Net version to 4.8.
 * **Version 1.0.0.3 (2018-03-15)** : Fixed bug with different .Net versions in the Nuget package.
 * **Version 1.0.0.2 (2018-02-11)** : Switched to .Net to 4.7.
 * **Version 1.0.0.1 (2017-08-16)** : Updated nuget project file and added documentation.

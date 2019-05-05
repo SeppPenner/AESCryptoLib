@@ -2,23 +2,24 @@
 <package >
   <metadata>
     <id>HaemmerElectronics.SeppPenner.AESCryptoLib</id>
-    <version>1.0.0.3</version>
+    <version>1.0.0.4</version>
     <authors>SeppPenner</authors>
     <owners>SeppPenner</owners>
     <licenseUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/License.txt</licenseUrl>
     <projectUrl>https://github.com/SeppPenner/AESCryptoLib/</projectUrl>
-    <iconUrl>https://drive.google.com/open?id=0B7FLEm_FBeJFLVpmUlNqNk9ublE</iconUrl>
+    <iconUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/Secure.ico</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-		AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.7.
+		AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.8.
 	</description>
     <releaseNotes>
+	    Version 1.0.0.4 (2019-05-05) : Updated .Net version to 4.8.
 		Version 1.0.0.3 (2018-03-15) : Fixed bug with different .Net versions in the Nuget package.
 		Version 1.0.0.2 (2018-02-11) : Switched to .Net to 4.7.
 		Version 1.0.0.1 (2017-08-16) : Updated nuget project file and added documentation.
 		Version 1.0.0.0 (2017-05-16) : 1.0 release.
 	</releaseNotes>
-    <copyright>Copyright © Hämmer Electronics 2017</copyright>
+    <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# aes csharp crypto aescrypt secure security</tags>
   </metadata>
   <files>
@@ -26,7 +27,9 @@
 		<file src="License.txt" target="lib/" />
 		<file src="Documentation\**" target="lib\Documentation" />
 		<file src=".Net 4.5\**" target="lib\net45" />
+		<file src=".Net 4.6\**" target="lib\net46" />
 		<file src=".Net 4.6.2\**" target="lib\net462" />
 		<file src=".Net 4.7\**" target="lib\net47" />
+		<file src=".Net 4.7.2\**" target="lib\net472" />
     </files>
 </package>
