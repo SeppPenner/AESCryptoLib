@@ -2,22 +2,23 @@
 <package >
   <metadata>
     <id>HaemmerElectronics.SeppPenner.AESCryptoLib</id>
-    <version>1.0.0.4</version>
+    <version>1.0.5.0</version>
     <authors>SeppPenner</authors>
     <owners>SeppPenner</owners>
     <licenseUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/License.txt</licenseUrl>
     <projectUrl>https://github.com/SeppPenner/AESCryptoLib/</projectUrl>
-    <iconUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/Secure.ico</iconUrl>
+    <iconUrl>https://github.com/SeppPenner/AESCryptoLib/blob/master/Secure.ico?raw=true</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
 		AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.8.
 	</description>
     <releaseNotes>
-	    Version 1.0.0.4 (2019-05-05) : Updated .Net version to 4.8.
-		Version 1.0.0.3 (2018-03-15) : Fixed bug with different .Net versions in the Nuget package.
-		Version 1.0.0.2 (2018-02-11) : Switched to .Net to 4.7.
-		Version 1.0.0.1 (2017-08-16) : Updated nuget project file and added documentation.
-		Version 1.0.0.0 (2017-05-16) : 1.0 release.
+	    Version 1.0.5.0 (2019-06-23): Added icon to the nuget package.
+	    Version 1.0.0.4 (2019-05-05): Updated .Net version to 4.8.
+		Version 1.0.0.3 (2018-03-15): Fixed bug with different .Net versions in the Nuget package.
+		Version 1.0.0.2 (2018-02-11): Switched to .Net to 4.7.
+		Version 1.0.0.1 (2017-08-16): Updated nuget project file and added documentation.
+		Version 1.0.0.0 (2017-05-16): 1.0 release.
 	</releaseNotes>
     <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# aes csharp crypto aescrypt secure security</tags>
