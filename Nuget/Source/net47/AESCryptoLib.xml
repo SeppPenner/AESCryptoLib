@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AESCryptoLib</name>
+    </assembly>
+    <members>
+        <member name="T:AESCryptoLib.AesKeySize">
+            <summary>
+                The <see cref="T:AESCryptoLib.AesKeySize" /> to be set for the encryption method.
+            </summary>
+        </member>
+        <member name="F:AESCryptoLib.AesKeySize.Strong">
+            <summary>
+            The strong encryption type.
+            </summary>
+        </member>
+        <member name="F:AESCryptoLib.AesKeySize.Weak">
+            <summary>
+            The weaker encryption type.
+            </summary>
+        </member>
+        <member name="T:AESCryptoLib.Crypter">
+            <inheritdoc cref="T:AESCryptoLib.ICrypter"></inheritdoc>
+            <summary>
+                The main class of the crypto algorithm.
+            </summary>
+            <seealso cref="T:AESCryptoLib.ICrypter"></seealso>
+        </member>
+        <member name="F:AESCryptoLib.Crypter._random">
+            <summary>
+            The random generator.
+            </summary>
+        </member>
+        <member name="M:AESCryptoLib.Crypter.Decrypt(AESCryptoLib.AesKeySize,System.String,System.String,System.String)">
+            <inheritdoc cref="T:AESCryptoLib.ICrypter"></inheritdoc>
+            <summary>
+                Decrypts a string with a password and salt value.
+            </summary>
+            <param name="aesKeySize">The <see cref="T:AESCryptoLib.AesKeySize" /> to be used in the decryption.</param>
+            <param name="encryptedString">The string that should be decrypted.</param>
+            <param name="password">The password to decrypt the data with.</param>
+            <param name="salt">The salt value to decrypt the data with.</param>
+            <returns>A decrypted <see cref="T:System.String"/>.</returns>
+            <seealso cref="T:AESCryptoLib.ICrypter"></seealso>
+        </member>
+        <member name="M:AESCryptoLib.Crypter.Encrypt(AESCryptoLib.AesKeySize,System.String,System.String,System.String)">
+            <inheritdoc cref="T:AESCryptoLib.ICrypter"></inheritdoc>
+            <summary>
+                Encrypts a string with a password and salt value.
+            </summary>
+            <param name="aesKeySize">The <see cref="T:AESCryptoLib.AesKeySize" /> to be used in the encryption.</param>
+            <param name="decryptedString">The string that should be encrypted.</param>
+            <param name="password">The password to encrypt the data with.</param>
+            <param name="salt">The salt value to encrypt the data with.</param>
+            <returns>An encrypted <see cref="T:System.String"/>.</returns>
+            <seealso cref="T:AESCryptoLib.ICrypter"></seealso>
+        </member>
+        <member name="M:AESCryptoLib.Crypter.GetRandomSalt">
+            <inheritdoc cref="T:AESCryptoLib.ICrypter"></inheritdoc>
+            <summary>
+                Returns a random salt value.
+            </summary>
+            <returns>A random salt value as string.</returns>
+            <seealso cref="T:AESCryptoLib.ICrypter"></seealso>
+        </member>
+        <member name="T:AESCryptoLib.ICrypter">
+            <summary>
+                The main class of the crypto algorithm.
+            </summary>
+        </member>
+        <member name="M:AESCryptoLib.ICrypter.Encrypt(AESCryptoLib.AesKeySize,System.String,System.String,System.String)">
+            <summary>
+                Encrypts a string with a password and salt value.
+            </summary>
+            <param name="aesKeySize">The <see cref="T:AESCryptoLib.AesKeySize" /> to be used in the encryption.</param>
+            <param name="decryptedString">The string that should be encrypted.</param>
+            <param name="password">The password to encrypt the data with.</param>
+            <param name="salt">The salt value to encrypt the data with.</param>
+            <returns>An encrypted <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:AESCryptoLib.ICrypter.Decrypt(AESCryptoLib.AesKeySize,System.String,System.String,System.String)">
+            <summary>
+                Decrypts a string with a password and salt value.
+            </summary>
+            <param name="aesKeySize">The <see cref="T:AESCryptoLib.AesKeySize" /> to be used in the decryption.</param>
+            <param name="encryptedString">The string that should be decrypted.</param>
+            <param name="password">The password to decrypt the data with.</param>
+            <param name="salt">The salt value to decrypt the data with.</param>
+            <returns>A decrypted <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:AESCryptoLib.ICrypter.GetRandomSalt">
+            <summary>
+                Returns a random salt value.
+            </summary>
+            <returns>A random salt value as string.</returns>
+        </member>
+    </members>
+</doc>

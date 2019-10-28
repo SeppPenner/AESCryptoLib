@@ -5,7 +5,14 @@
     /// </summary>
     public enum AesKeySize
     {
+        /// <summary>
+        /// The strong encryption type.
+        /// </summary>
         Strong = 256,
+
+        /// <summary>
+        /// The weaker encryption type.
+        /// </summary>
         Weak = 128
     }
 }

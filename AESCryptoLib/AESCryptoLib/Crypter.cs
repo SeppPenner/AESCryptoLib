@@ -5,12 +5,28 @@ using System.Text;
 
 namespace AESCryptoLib
 {
-    /// <inheritdoc />
+    /// <inheritdoc cref="ICrypter"></inheritdoc>
+    /// <summary>
+    ///     The main class of the crypto algorithm.
+    /// </summary>
+    /// <seealso cref="ICrypter"></seealso>
     public class Crypter : ICrypter
     {
+        /// <summary>
+        /// The random generator.
+        /// </summary>
         private readonly Random _random = new Random();
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="ICrypter"></inheritdoc>
+        /// <summary>
+        ///     Decrypts a string with a password and salt value.
+        /// </summary>
+        /// <param name="aesKeySize">The <see cref="AesKeySize" /> to be used in the decryption.</param>
+        /// <param name="encryptedString">The string that should be decrypted.</param>
+        /// <param name="password">The password to decrypt the data with.</param>
+        /// <param name="salt">The salt value to decrypt the data with.</param>
+        /// <returns>A decrypted <see cref="string"/>.</returns>
+        /// <seealso cref="ICrypter"></seealso>
         public string Decrypt(AesKeySize aesKeySize, string encryptedString, string password, string salt)
         {
             var saltValue = Encoding.UTF32.GetBytes(salt);
@@ -34,7 +50,16 @@ namespace AESCryptoLib
             return decryptedString;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="ICrypter"></inheritdoc>
+        /// <summary>
+        ///     Encrypts a string with a password and salt value.
+        /// </summary>
+        /// <param name="aesKeySize">The <see cref="AesKeySize" /> to be used in the encryption.</param>
+        /// <param name="decryptedString">The string that should be encrypted.</param>
+        /// <param name="password">The password to encrypt the data with.</param>
+        /// <param name="salt">The salt value to encrypt the data with.</param>
+        /// <returns>An encrypted <see cref="string"/>.</returns>
+        /// <seealso cref="ICrypter"></seealso>
         public string Encrypt(AesKeySize aesKeySize, string decryptedString, string password, string salt)
         {
             var saltValue = Encoding.UTF32.GetBytes(salt);
@@ -58,7 +83,12 @@ namespace AESCryptoLib
             return encryptedString;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="ICrypter"></inheritdoc>
+        /// <summary>
+        ///     Returns a random salt value.
+        /// </summary>
+        /// <returns>A random salt value as string.</returns>
+        /// <seealso cref="ICrypter"></seealso>
         public string GetRandomSalt()
         {
             var alg = SHA512.Create();

@@ -1,3 +1,3 @@
-dotnet build AesCryptoLib.sln -c Release
-xcopy /s .\AesCryptoLib\bin\Release ..\Nuget\Source\
+dotnet build AESCryptoLib.sln -c Release
+xcopy /s .\AESCryptoLib\bin\Release ..\Nuget\Source\
 pause

@@ -12,7 +12,7 @@
         /// <param name="decryptedString">The string that should be encrypted.</param>
         /// <param name="password">The password to encrypt the data with.</param>
         /// <param name="salt">The salt value to encrypt the data with.</param>
-        /// <returns></returns>
+        /// <returns>An encrypted <see cref="string"/>.</returns>
         string Encrypt(AesKeySize aesKeySize, string decryptedString, string password, string salt);
 
         /// <summary>
@@ -20,9 +20,9 @@
         /// </summary>
         /// <param name="aesKeySize">The <see cref="AesKeySize" /> to be used in the decryption.</param>
         /// <param name="encryptedString">The string that should be decrypted.</param>
-        /// <param name="password">The password to dencrypt the data with.</param>
-        /// <param name="salt">The salt value to dencrypt the data with.</param>
-        /// <returns></returns>
+        /// <param name="password">The password to decrypt the data with.</param>
+        /// <param name="salt">The salt value to decrypt the data with.</param>
+        /// <returns>A decrypted <see cref="string"/>.</returns>
         string Decrypt(AesKeySize aesKeySize, string encryptedString, string password, string salt);
 
         /// <summary>

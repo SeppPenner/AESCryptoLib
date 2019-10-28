@@ -1,17 +1,17 @@
-DecimalMath
+AESCryptoLib
 ====================================
 
-DecimalMath is a library to calculate mathematic functions with the decimal data type.
-The assembly was written and tested in .Net Framework 4.8 and .Net Standard 2.0.
+AESCryptoLib is an assembly/ library to encrypt strings with AES.
+The assembly was written and tested in .Net 4.8 and .Net Standard 2.0.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/w79tkhi5jy9c2uih?svg=true)](https://ci.appveyor.com/project/SeppPenner/decimalmath)
-[![GitHub issues](https://img.shields.io/github/issues/SeppPenner/DecimalMath.svg)](https://github.com/SeppPenner/DecimalMath/issues)
-[![GitHub forks](https://img.shields.io/github/forks/SeppPenner/DecimalMath.svg)](https://github.com/SeppPenner/DecimalMath/network)
-[![GitHub stars](https://img.shields.io/github/stars/SeppPenner/DecimalMath.svg)](https://github.com/SeppPenner/DecimalMath/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/SeppPenner/DecimalMath/master/License.txt)
-[![Nuget](https://img.shields.io/badge/DecimalMath-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.DecimalMath/)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.DecimalMath.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.DecimalMath/)
-[![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/DecimalMath/badge.svg)](https://snyk.io/test/github/SeppPenner/DecimalMath)
+[![Build status](https://ci.appveyor.com/api/projects/status/a3ptt999etgpfutv?svg=true)](https://ci.appveyor.com/project/SeppPenner/aescryptolib)
+[![GitHub issues](https://img.shields.io/github/issues/SeppPenner/AESCryptoLib.svg)](https://github.com/SeppPenner/AESCryptoLib/issues)
+[![GitHub forks](https://img.shields.io/github/forks/SeppPenner/AESCryptoLib.svg)](https://github.com/SeppPenner/AESCryptoLib/network)
+[![GitHub stars](https://img.shields.io/github/stars/SeppPenner/AESCryptoLib.svg)](https://github.com/SeppPenner/AESCryptoLib/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/SeppPenner/AESCryptoLib/master/License.txt)
+[![Nuget](https://img.shields.io/badge/AESCryptoLib-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.AESCryptoLib.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
+[![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/AESCryptoLib/badge.svg)](https://snyk.io/test/github/SeppPenner/AESCryptoLib)
 
 ## Available for
 * NetFramework 4.5
@@ -24,32 +24,26 @@ The assembly was written and tested in .Net Framework 4.8 and .Net Standard 2.0.
 * NetCore 2.2
 * NetCore 3.0
 
-## Available methods:
-
+## Basic usage:
 ```csharp
-decimal Abs(decimal x);
-decimal Acos(decimal x);
-decimal Asin(decimal x);
-decimal Atan(decimal x);
-decimal Atan2(decimal x);
-decimal Cos(decimal x);
-decimal Cosh(decimal x);
-decimal Exp(decimal x);
-decimal Log(decimal x);
-decimal Log10(decimal x);
-decimal Power(decimal value, decimal pow);
-decimal PowerN(decimal value, int power);
-int Sign(decimal x);
-decimal Sin(decimal x);
-decimal Sinh(decimal x);
-decimal Sqrt(decimal x, decimal epsilon = Zero);
-decimal Tan(decimal x);
-decimal Tanh(decimal x);
+public void Test()
+{
+    ICrypter cryptor = new Crypter();
+    string salt = cryptor.GetRandomSalt();
+    string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
+    string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt);
+}
 ```
 
-The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.DecimalMath/).
+The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/).
 
 Change history
 --------------
 
-* **Version 1.0.0.0 (2019-10-22)** : 1.0 release.
+* **Version 1.0.6.0 (2019-10-28)** : Updated nuget packages, added GitVersionTask, fixed bugs with package.
+* **Version 1.0.5.0 (2019-06-23)** : Added icon to the nuget package.
+* **Version 1.0.0.4 (2019-05-05)** : Updated .Net version to 4.8.
+* **Version 1.0.0.3 (2018-03-15)** : Fixed bug with different .Net versions in the Nuget package.
+* **Version 1.0.0.2 (2018-02-11)** : Switched to .Net to 4.7.
+* **Version 1.0.0.1 (2017-08-16)** : Updated nuget project file and added documentation.
+* **Version 1.0.0.0 (2017-05-16)** : 1.0 release.
