@@ -20,6 +20,9 @@ The assembly was written and tested in .Net 4.8.
 * NetFramework 4.7
 * NetFramework 4.7.2
 * NetFramework 4.8
+* NetStandard 2.0
+* NetCore 2.2
+* NetCore 3.0
 
 ## Basic usage:
 ```csharp
@@ -37,6 +40,7 @@ The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectr
 Change history
 --------------
 
+* **Version 1.0.6.0 (2019-10-28)** : Updated nuget packages, added GitVersionTask, fixed bugs with package.
 * **Version 1.0.5.0 (2019-06-23)** : Added icon to the nuget package.
 * **Version 1.0.0.4 (2019-05-05)** : Updated .Net version to 4.8.
 * **Version 1.0.0.3 (2018-03-15)** : Fixed bug with different .Net versions in the Nuget package.
