@@ -21,6 +21,7 @@ The assembly was written and tested in .Net 4.8 and .Net Standard 2.0.
 * NetFramework 4.7.2
 * NetFramework 4.8
 * NetStandard 2.0
+* NetStandard 2.1
 * NetCore 2.2
 * NetCore 3.0
 
