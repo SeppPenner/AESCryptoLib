@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "AESCryptoLib/1.0.7+6": {
+      "AESCryptoLib/1.0.9+4": {
         "dependencies": {
           "GitVersionTask": "5.1.2"
         },
@@ -18,7 +18,7 @@
     }
   },
   "libraries": {
-    "AESCryptoLib/1.0.7+6": {
+    "AESCryptoLib/1.0.9+4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

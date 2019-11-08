@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "AESCryptoLib/1.0.7+6": {
+      "AESCryptoLib/1.0.9+4": {
         "dependencies": {
           "GitVersionTask": "5.1.2",
           "NETStandard.Library": "2.0.3"
@@ -26,7 +26,7 @@
     }
   },
   "libraries": {
-    "AESCryptoLib/1.0.7+6": {
+    "AESCryptoLib/1.0.9+4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
