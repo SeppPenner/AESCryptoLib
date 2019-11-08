@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>HaemmerElectronics.SeppPenner.AESCryptoLib</id>
-    <version>1.0.6.0</version>
+    <version>1.0.8.0</version>
     <authors>SeppPenner</authors>
     <owners>SeppPenner</owners>
     <projectUrl>https://github.com/SeppPenner/AESCryptoLib/</projectUrl>
@@ -18,7 +18,7 @@
 	  The assembly was written and tested in .Net 4.8 and .Net Standard 2.0.
 	</description>
     <releaseNotes>
-	    Version 1.0.6.0 (2019-10-28): Updated nuget packages, added GitVersionTask, fixed bugs with package.
+	    Version 1.0.8.0 (2019-11-08): Updated nuget packages.
 	</releaseNotes>
     <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# aes csharp crypto aescrypt secure security</tags>
