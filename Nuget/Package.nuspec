@@ -23,17 +23,15 @@
     <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# aes csharp crypto aescrypt secure security</tags>
 	<dependencies>
-      <group targetFramework="net45">   
-      </group>
 	  <group targetFramework="net46">
-      </group>
-	  <group targetFramework="net47">	
-      </group>
-	  <group targetFramework="net48"> 
       </group>
 	  <group targetFramework="net462">
       </group>
+	  <group targetFramework="net47">	
+      </group>
 	  <group targetFramework="net472">   
+      </group>
+	  <group targetFramework="net48"> 
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="NETStandard.Library" version="2.0.0" />
@@ -41,16 +39,15 @@
 	  <group targetFramework="netstandard2.1">
         <dependency id="NETStandard.Library" version="2.1.0" />
       </group>
-      <group targetFramework="netcoreapp2.2">
+      <group targetFramework="netcoreapp2.1">
       </group>
-	  <group targetFramework="netcoreapp3.0">
+	  <group targetFramework="netcoreapp3.1">
       </group>
     </dependencies>
   </metadata>
   <files>
 	  <file src="README.md" target="" />
 	  <file src="License.txt" target="" />
-	  <file src="Source\net45\**" target="lib\net45" />
 	  <file src="Source\net46\**" target="lib\net46" />
 	  <file src="Source\net462\**" target="lib\net462" />
 	  <file src="Source\net47\**" target="lib\net47" />
@@ -58,8 +55,8 @@
 	  <file src="Source\net48\**" target="lib\net48" />
 	  <file src="Source\netstandard2.0\**" target="lib\netstandard2.0" />
 	  <file src="Source\netstandard2.1\**" target="lib\netstandard2.1" />
-	  <file src="Source\netcoreapp2.2\**" target="lib\netcoreapp2.2" />
-	  <file src="Source\netcoreapp3.0\**" target="lib\netcoreapp3.0" />
+	  <file src="Source\netcoreapp2.1\**" target="lib\netcoreapp2.1" />
+	  <file src="Source\netcoreapp3.1\**" target="lib\netcoreapp3.1" />
 	  <file src="..\Icon.png" target="images\" />
    </files>
 </package>
