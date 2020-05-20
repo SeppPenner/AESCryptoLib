@@ -1,21 +1,31 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
+﻿//--------------------------------------------------------------------------------------------------------------------
+// <copyright file="Crypter.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The main class of the crypto algorithm.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace AESCryptoLib
 {
+    using System;
+    using System.IO;
+    using System.Security.Cryptography;
+    using System.Text;
+
     /// <inheritdoc cref="ICrypter"></inheritdoc>
     /// <summary>
     ///     The main class of the crypto algorithm.
     /// </summary>
     /// <seealso cref="ICrypter"></seealso>
+    // ReSharper disable once UnusedMember.Global
     public class Crypter : ICrypter
     {
         /// <summary>
         /// The random generator.
         /// </summary>
-        private readonly Random _random = new Random();
+        private readonly Random random = new Random();
 
         /// <inheritdoc cref="ICrypter"></inheritdoc>
         /// <summary>
@@ -33,7 +43,7 @@ namespace AESCryptoLib
             var generatedKey = new Rfc2898DeriveBytes(password, saltValue);
             var aes = new AesManaged
             {
-                KeySize = (int) aesKeySize,
+                KeySize = (int)aesKeySize,
                 BlockSize = 128
             };
             aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
@@ -66,7 +76,7 @@ namespace AESCryptoLib
             var generatedKey = new Rfc2898DeriveBytes(password, saltValue);
             var aes = new AesManaged
             {
-                KeySize = (int) aesKeySize,
+                KeySize = (int)aesKeySize,
                 BlockSize = 128
             };
             aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
@@ -93,7 +103,7 @@ namespace AESCryptoLib
         {
             var alg = SHA512.Create();
             alg.ComputeHash(
-                Encoding.UTF32.GetBytes(DateTime.Now.ToLongDateString() + _random.Next(int.MaxValue) + Guid.NewGuid()));
+                Encoding.UTF32.GetBytes(DateTime.Now.ToLongDateString() + this.random.Next(int.MaxValue) + Guid.NewGuid()));
             return BitConverter.ToString(alg.Hash);
         }
     }

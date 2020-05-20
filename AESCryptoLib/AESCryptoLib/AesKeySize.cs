@@ -1,4 +1,13 @@
-﻿namespace AESCryptoLib
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AesKeySize.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The <see cref="AesKeySize" /> to be set for the encryption method.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace AESCryptoLib
 {
     /// <summary>
     ///     The <see cref="AesKeySize" /> to be set for the encryption method.

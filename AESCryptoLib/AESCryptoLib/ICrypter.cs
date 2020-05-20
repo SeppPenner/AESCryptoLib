@@ -1,7 +1,16 @@
-﻿namespace AESCryptoLib
+﻿//--------------------------------------------------------------------------------------------------------------------
+// <copyright file="ICrypter.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The main interface of the crypto algorithm.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace AESCryptoLib
 {
     /// <summary>
-    ///     The main class of the crypto algorithm.
+    ///     The main interface of the crypto algorithm.
     /// </summary>
     public interface ICrypter
     {
@@ -13,6 +22,7 @@
         /// <param name="password">The password to encrypt the data with.</param>
         /// <param name="salt">The salt value to encrypt the data with.</param>
         /// <returns>An encrypted <see cref="string"/>.</returns>
+        // ReSharper disable once UnusedMember.Global
         string Encrypt(AesKeySize aesKeySize, string decryptedString, string password, string salt);
 
         /// <summary>
@@ -23,12 +33,14 @@
         /// <param name="password">The password to decrypt the data with.</param>
         /// <param name="salt">The salt value to decrypt the data with.</param>
         /// <returns>A decrypted <see cref="string"/>.</returns>
+        // ReSharper disable once UnusedMember.Global
         string Decrypt(AesKeySize aesKeySize, string encryptedString, string password, string salt);
 
         /// <summary>
         ///     Returns a random salt value.
         /// </summary>
         /// <returns>A random salt value as string.</returns>
+        // ReSharper disable once UnusedMember.Global
         string GetRandomSalt();
     }
 }
