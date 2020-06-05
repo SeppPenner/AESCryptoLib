@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net46;net462;net47;net472;net48;netstandard2.0;netstandard2.1;netcoreapp2.1;netcoreapp3.1;</TargetFrameworks>
+	<AssemblyName>AESCryptoLib</AssemblyName>
+    <RootNamespace>AESCryptoLib</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>HaemmerElectronics.SeppPenner.AESCryptoLib</PackageId>
+	<Authors>SeppPenner</Authors>
+    <Company>Hämmer Electronics</Company>
+    <Copyright>Copyright © Hämmer Electronics</Copyright>
+	<Description>AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.8 and .Net Standard 2.0.</Description>
+	<PackageTags>c# aes csharp crypto aescrypt secure security</PackageTags>
+	<PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
+	<PackageIcon>Icon.png</PackageIcon>
+    <RepositoryType>Github</RepositoryType>
+    <PackageReleaseNotes>Version 1.0.6.0 (2019-10-28): Updated nuget packages, added GitVersionTask, fixed bugs with package.</PackageReleaseNotes>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="5.3.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+	<None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+	    <None Include="..\..\Changelog.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+</Project>
