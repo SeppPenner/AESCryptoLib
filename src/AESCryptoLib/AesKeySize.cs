@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AesKeySize.cs" company="Haemmer Electronics">
+// <copyright file="AesKeySize.cs" company="Hämmer Electronics">
 //   Copyright (c) 2020 All rights reserved.
 // </copyright>
 // <summary>
@@ -17,11 +17,13 @@ namespace AESCryptoLib
         /// <summary>
         /// The strong encryption type.
         /// </summary>
+        // ReSharper disable once UnusedMember.Global
         Strong = 256,
 
         /// <summary>
         /// The weaker encryption type.
         /// </summary>
+        // ReSharper disable once UnusedMember.Global
         Weak = 128
     }
 }

@@ -1,5 +1,5 @@
 ﻿//--------------------------------------------------------------------------------------------------------------------
-// <copyright file="ICrypter.cs" company="Haemmer Electronics">
+// <copyright file="ICrypter.cs" company="Hämmer Electronics">
 //   Copyright (c) 2020 All rights reserved.
 // </copyright>
 // <summary>
