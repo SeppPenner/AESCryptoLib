@@ -29,6 +29,7 @@ The assembly was written and tested in .Net 5.0.
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet-framework
 * https://dotnet.microsoft.com/download/dotnet-core
+* https://dotnet.microsoft.com/download/dotnet/5.0
 
 ## Basic usage:
 ```csharp
