@@ -44,6 +44,12 @@ public void Test()
 
 The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/).
 
+## Install
+
+```bash
+dotnet add package HaemmerElectronics.SeppPenner.AESCryptoLib
+```
+
 Change history
 --------------
 
