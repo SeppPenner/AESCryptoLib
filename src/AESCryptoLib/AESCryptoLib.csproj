@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
 	<PackageIcon>Icon.png</PackageIcon>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Version 1.1.0.0 (2020-11-11): Updated nuget packages, moved to Net 5.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.1.1.0 (2021-02-21): Updated nuget packages.</PackageReleaseNotes>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
   </PropertyGroup>
 
