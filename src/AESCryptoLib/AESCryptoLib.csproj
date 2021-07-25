@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
 	<PackageIcon>Icon.png</PackageIcon>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Version 1.1.2.0 (2021-07-25) : Updated nuget packages, enabled source linking for debugging.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.1.2.0 (2021-07-25): Updated nuget packages, enabled source linking for debugging.</PackageReleaseNotes>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
