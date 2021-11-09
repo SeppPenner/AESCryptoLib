@@ -2,7 +2,7 @@ AESCryptoLib
 ====================================
 
 AESCryptoLib is an assembly/ library to encrypt strings with AES.
-The assembly was written and tested in .Net 5.0.
+The assembly was written and tested in .Net 6.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a3ptt999etgpfutv?svg=true)](https://ci.appveyor.com/project/SeppPenner/aescryptolib)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/AESCryptoLib.svg)](https://github.com/SeppPenner/AESCryptoLib/issues)
@@ -24,11 +24,12 @@ The assembly was written and tested in .Net 5.0.
 * NetStandard 2.1
 * NetCore 3.1
 * Net 5.0
+* Net 6.0
 
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet-framework
 * https://dotnet.microsoft.com/download/dotnet-core
-* https://dotnet.microsoft.com/download/dotnet/5.0
+* https://dotnet.microsoft.com/download/dotnet
 
 ## Basic usage
 ```csharp
