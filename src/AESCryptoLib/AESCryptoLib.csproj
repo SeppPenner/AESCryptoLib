@@ -10,7 +10,7 @@
 	<Authors>SeppPenner</Authors>
     <Company>Hämmer Electronics</Company>
     <Copyright>Copyright © Hämmer Electronics</Copyright>
-	<Description>AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 4.8 and .Net Standard 2.0.</Description>
+	<Description>AESCryptoLib is an assembly/ library to encrypt strings with AES. The assembly was written and tested in .Net 6.0.</Description>
 	<PackageTags>c# aes csharp crypto aescrypt secure security</PackageTags>
 	<PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
