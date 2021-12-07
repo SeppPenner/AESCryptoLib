@@ -41,11 +41,9 @@ namespace AESCryptoLib
         {
             var saltValue = Encoding.UTF32.GetBytes(salt);
             var generatedKey = new Rfc2898DeriveBytes(password, saltValue);
-            var aes = new AesManaged
-            {
-                KeySize = (int)aesKeySize,
-                BlockSize = 128
-            };
+            var aes = Aes.Create();
+            aes.BlockSize = 128;
+            aes.KeySize = (int)aesKeySize;
             aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
             aes.IV = generatedKey.GetBytes(aes.BlockSize / 8);
             var ms = new MemoryStream();
@@ -74,11 +72,9 @@ namespace AESCryptoLib
         {
             var saltValue = Encoding.UTF32.GetBytes(salt);
             var generatedKey = new Rfc2898DeriveBytes(password, saltValue);
-            var aes = new AesManaged
-            {
-                KeySize = (int)aesKeySize,
-                BlockSize = 128
-            };
+            var aes = Aes.Create();
+            aes.BlockSize = 128;
+            aes.KeySize = (int)aesKeySize;
             aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
             aes.IV = generatedKey.GetBytes(aes.BlockSize / 8);
             var ms = new MemoryStream();
