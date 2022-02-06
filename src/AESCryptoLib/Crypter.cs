@@ -25,7 +25,7 @@ namespace AESCryptoLib
         /// <summary>
         /// The random generator.
         /// </summary>
-        private readonly Random random = new Random();
+        private readonly Random random = new();
 
         /// <inheritdoc cref="ICrypter"></inheritdoc>
         /// <summary>
@@ -98,6 +98,12 @@ namespace AESCryptoLib
         public string GetRandomSalt()
         {
             var alg = SHA512.Create();
+
+            if (alg?.Hash is null)
+            {
+                return string.Empty;
+            }
+
             alg.ComputeHash(
                 Encoding.UTF32.GetBytes(DateTime.Now.ToLongDateString() + this.random.Next(int.MaxValue) + Guid.NewGuid()));
             return BitConverter.ToString(alg.Hash);
