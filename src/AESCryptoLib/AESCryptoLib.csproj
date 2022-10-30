@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
 	<PackageIcon>Icon.png</PackageIcon>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Version 1.1.5.0 (2022-02-09): Added nullable checks, added editorconfig, added file scoped namespaces, added global usings, removed native support for Net Framework (Breaking change).</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.1.6.0 (2022-10-30): Updated nuget packages.</PackageReleaseNotes>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
