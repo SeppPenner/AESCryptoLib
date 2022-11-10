@@ -19,6 +19,7 @@ AESCryptoLib is an assembly/ library to encrypt strings with AES.
 * NetCore 3.1
 * Net 5.0
 * Net 6.0
+* Net 7.0
 
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet-framework
