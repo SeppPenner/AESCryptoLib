@@ -17,7 +17,6 @@ AESCryptoLib is an assembly/ library to encrypt strings with AES.
 * NetStandard 2.0
 * NetStandard 2.1
 * NetCore 3.1
-* Net 5.0
 * Net 6.0
 * Net 7.0
 
