@@ -26,8 +26,8 @@ public void Test()
 {
     ICrypter cryptor = new Crypter();
     string salt = cryptor.GetRandomSalt();
-    string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt);
-    string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt);
+    string encrypted = cryptor.Encrypt(AesKeySize.Strong, "Test", "Password", salt, 50000, HashAlgorithmName.SHA256);
+    string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt, 50000, HashAlgorithmName.SHA256);
 }
 ```
 
