@@ -1,57 +1,59 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
-	<AssemblyName>AESCryptoLib</AssemblyName>
-    <RootNamespace>AESCryptoLib</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageId>HaemmerElectronics.SeppPenner.AESCryptoLib</PackageId>
-	<Authors>SeppPenner</Authors>
-    <Company>Hämmer Electronics</Company>
-    <Copyright>Copyright © Hämmer Electronics</Copyright>
-	<Description>AESCryptoLib is an assembly/ library to encrypt strings with AES.</Description>
-	<PackageTags>c# aes csharp crypto aescrypt secure security</PackageTags>
-	<PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
-	<PackageIcon>Icon.png</PackageIcon>
-    <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Version 1.1.8.0 (2022-11-10): Updated NuGet packages, added support for Net7.0, removed support for Net5.0.</PackageReleaseNotes>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <AssemblyName>AESCryptoLib</AssemblyName>
+        <RootNamespace>AESCryptoLib</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageId>HaemmerElectronics.SeppPenner.AESCryptoLib</PackageId>
+        <Authors>SeppPenner</Authors>
+        <Company>Hämmer Electronics</Company>
+        <Copyright>Copyright © Hämmer Electronics</Copyright>
+        <Description>AESCryptoLib is an assembly/ library to encrypt strings with AES.</Description>
+        <PackageTags>c# aes csharp crypto aescrypt secure security</PackageTags>
+        <PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
+        <PackageIcon>Icon.png</PackageIcon>
+        <RepositoryType>Github</RepositoryType>
+        <PackageReleaseNotes>Version 1.1.8.0 (2022-11-10): Updated NuGet packages, added support for Net7.0, removed support for Net5.0.</PackageReleaseNotes>
+        <PackageLicenseFile>License.txt</PackageLicenseFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <NoWarn>Nu1803</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
 
-  <ItemGroup>
-     <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="..\..\Icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\License.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-	<None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-	    <None Include="..\..\Changelog.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\Icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\License.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\Changelog.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
 </Project>

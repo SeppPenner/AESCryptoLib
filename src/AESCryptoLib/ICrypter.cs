@@ -21,8 +21,16 @@ public interface ICrypter
     /// <param name="decryptedString">The string that should be encrypted.</param>
     /// <param name="password">The password to encrypt the data with.</param>
     /// <param name="salt">The salt value to encrypt the data with.</param>
+    /// <param name="iterations">The number of iterations.</param>
+    /// <param name="hashAlgorithmName">The hash algorithm name.</param>
     /// <returns>An encrypted <see cref="string"/>.</returns>
-    string Encrypt(AesKeySize aesKeySize, string decryptedString, string password, string salt);
+    string Encrypt(
+        AesKeySize aesKeySize,
+        string decryptedString,
+        string password,
+        string salt,
+        int iterations = 50000,
+        HashAlgorithmName? hashAlgorithmName = null);
 
     /// <summary>
     ///     Decrypts a string with a password and salt value.
@@ -31,8 +39,16 @@ public interface ICrypter
     /// <param name="encryptedString">The string that should be decrypted.</param>
     /// <param name="password">The password to decrypt the data with.</param>
     /// <param name="salt">The salt value to decrypt the data with.</param>
+    /// <param name="iterations">The number of iterations.</param>
+    /// <param name="hashAlgorithmName">The hash algorithm name.</param>
     /// <returns>A decrypted <see cref="string"/>.</returns>
-    string Decrypt(AesKeySize aesKeySize, string encryptedString, string password, string salt);
+    string Decrypt(
+        AesKeySize aesKeySize,
+        string encryptedString,
+        string password,
+        string salt,
+        int iterations = 50000,
+        HashAlgorithmName? hashAlgorithmName = null);
 
     /// <summary>
     ///     Returns a random salt value.
