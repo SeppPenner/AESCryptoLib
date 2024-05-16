@@ -16,7 +16,7 @@
         <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
-        <PackageReleaseNotes>Version 1.2.0.0 (2023-11-21): Added support for Net8.0.</PackageReleaseNotes>
+        <PackageReleaseNotes>Version 1.2.1.0 (2024-05-16): Removed support for Net7.0.</PackageReleaseNotes>
         <PackageLicenseFile>License.txt</PackageLicenseFile>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
