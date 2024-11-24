@@ -17,8 +17,8 @@ AESCryptoLib is an assembly/ library to encrypt strings with AES.
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?logo=paypal&logoColor=white)](https://paypal.me/th070795)
 
 ## Available for
-* Net 6.0
 * Net 8.0
+* Net 9.0
 
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet

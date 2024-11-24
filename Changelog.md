@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.2.2.0 (2024-11-24)** : Removed support for Net6.0, added support for Net9.0, updated NuGet packages.
 * **Version 1.2.1.0 (2024-05-16)** : Removed support for Net7.0.
 * **Version 1.2.0.0 (2023-11-21)** : Added support for Net8.0.
 * **Version 1.1.9.0 (2023-11-13)** : Removed netcoreapp3.1 support, removed netstandard support, fixed deprecated classes, updated NuGet packages.
