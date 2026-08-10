@@ -11,14 +11,14 @@ AESCryptoLib is an assembly/ library to encrypt strings with AES.
 [![Nuget](https://img.shields.io/badge/AESCryptoLib-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.AESCryptoLib.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/AESCryptoLib/badge.svg)](https://snyk.io/test/github/SeppPenner/AESCryptoLib)
-[![Gitter](https://img.shields.io/matrix/GeoJsonCircleToPolygon%3Agitter.im?server_fqdn=matrix.org)](https://matrix.to/#/#AESCryptoLib_community:gitter.im)
+[![Gitter](https://img.shields.io/matrix/AESCryptoLib_community%3Agitter.im?server_fqdn=matrix.org)](https://matrix.to/#/#AESCryptoLib_community:gitter.im)
 [![Blogger](https://img.shields.io/badge/Follow_me_on-blogger-orange)](https://franzhuber23.blogspot.de/)
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?logo=patreon&logoColor=white)](https://patreon.com/SeppPennerOpenSourceDevelopment)
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?logo=paypal&logoColor=white)](https://paypal.me/th070795)
 
 ## Available for
 * Net 8.0
-* Net 9.0
+* Net 10.0
 
 ## Net Core and Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet
@@ -33,6 +33,10 @@ public void Test()
     string decrypted = cryptor.Decrypt(AesKeySize.Strong, encrypted, "Password", salt, 50000, HashAlgorithmName.SHA256);
 }
 ```
+
+Store the salt value next to the encrypted data and use a new one for every secret: the key and the
+initialization vector are both derived from the password and the salt value, so the same pair always
+produces the same result.
 
 The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/).
 
