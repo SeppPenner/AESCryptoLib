@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
         <AssemblyName>AESCryptoLib</AssemblyName>
         <RootNamespace>AESCryptoLib</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -16,7 +16,7 @@
         <RepositoryUrl>https://github.com/SeppPenner/AESCryptoLib</RepositoryUrl>
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
-        <PackageReleaseNotes>Version 1.2.2.0 (2024-11-24): Removed support for Net6.0, added support for Net9.0, updated NuGet packages.</PackageReleaseNotes>
+        <PackageReleaseNotes>Version 1.2.3.0 (2026-08-10): Fixed GetRandomSalt always returning an empty string, replaced the obsolete Rfc2898DeriveBytes constructor, fixed the undisposed crypto objects, added unit tests, removed support for Net9.0, added support for Net10.0, updated NuGet packages.</PackageReleaseNotes>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -25,17 +25,19 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <NoWarn>Nu1803</NoWarn>
+        <NoWarn>NU1803</NoWarn>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NuGetAuditMode>all</NuGetAuditMode>
+        <NuGetAudit>true</NuGetAudit>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GitVersion.MsBuild" Version="6.0.5">
+        <PackageReference Include="GitVersion.MsBuild" Version="6.8.2">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>
