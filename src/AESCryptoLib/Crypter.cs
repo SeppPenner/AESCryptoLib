@@ -17,9 +17,14 @@ namespace AESCryptoLib;
 public class Crypter : ICrypter
 {
     /// <summary>
-    /// The random generator.
+    /// The block size used for the encryption and the decryption in bits.
     /// </summary>
-    private readonly Random random = new();
+    private const int BlockSizeInBits = 128;
+
+    /// <summary>
+    /// The number of random bytes a salt value returned by <see cref="GetRandomSalt"/> is built from.
+    /// </summary>
+    private const int SaltSizeInBytes = 64;
 
     /// <inheritdoc cref="ICrypter"></inheritdoc>
     /// <summary>
@@ -41,23 +46,18 @@ public class Crypter : ICrypter
         int iterations = 50000,
         HashAlgorithmName? hashAlgorithmName = null)
     {
-        var saltValue = Encoding.UTF32.GetBytes(salt);
-        var generatedKey = new Rfc2898DeriveBytes(password, saltValue, iterations, hashAlgorithmName ?? HashAlgorithmName.SHA256);
-        var aes = Aes.Create();
-        aes.BlockSize = 128;
-        aes.KeySize = (int)aesKeySize;
-        aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
-        aes.IV = generatedKey.GetBytes(aes.BlockSize / 8);
-        var ms = new MemoryStream();
-        var cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Write);
-        var data = Convert.FromBase64String(encryptedString);
-        cs.Write(data, 0, data.Length);
-        cs.FlushFinalBlock();
-        cs.Close();
-        var decryptedString = Encoding.UTF32.GetString(ms.ToArray());
-        ms.Close();
-        aes.Clear();
-        return decryptedString;
+        using var aes = CreateAes(aesKeySize, password, salt, iterations, hashAlgorithmName);
+        using var decryptor = aes.CreateDecryptor();
+        using var memoryStream = new MemoryStream();
+
+        using (var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Write, leaveOpen: true))
+        {
+            var data = Convert.FromBase64String(encryptedString);
+            cryptoStream.Write(data, 0, data.Length);
+            cryptoStream.FlushFinalBlock();
+        }
+
+        return Encoding.UTF32.GetString(memoryStream.ToArray());
     }
 
     /// <inheritdoc cref="ICrypter"></inheritdoc>
@@ -80,23 +80,18 @@ public class Crypter : ICrypter
         int iterations = 50000,
         HashAlgorithmName? hashAlgorithmName = null)
     {
-        var saltValue = Encoding.UTF32.GetBytes(salt);
-        var generatedKey = new Rfc2898DeriveBytes(password, saltValue, iterations, hashAlgorithmName ?? HashAlgorithmName.SHA256);
-        var aes = Aes.Create();
-        aes.BlockSize = 128;
-        aes.KeySize = (int)aesKeySize;
-        aes.Key = generatedKey.GetBytes(aes.KeySize / 8);
-        aes.IV = generatedKey.GetBytes(aes.BlockSize / 8);
-        var ms = new MemoryStream();
-        var cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write);
-        var data = Encoding.UTF32.GetBytes(decryptedString);
-        cs.Write(data, 0, data.Length);
-        cs.FlushFinalBlock();
-        cs.Close();
-        var encryptedString = Convert.ToBase64String(ms.ToArray());
-        ms.Close();
-        aes.Clear();
-        return encryptedString;
+        using var aes = CreateAes(aesKeySize, password, salt, iterations, hashAlgorithmName);
+        using var encryptor = aes.CreateEncryptor();
+        using var memoryStream = new MemoryStream();
+
+        using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write, leaveOpen: true))
+        {
+            var data = Encoding.UTF32.GetBytes(decryptedString);
+            cryptoStream.Write(data, 0, data.Length);
+            cryptoStream.FlushFinalBlock();
+        }
+
+        return Convert.ToBase64String(memoryStream.ToArray());
     }
 
     /// <inheritdoc cref="ICrypter"></inheritdoc>
@@ -107,15 +102,45 @@ public class Crypter : ICrypter
     /// <seealso cref="ICrypter"></seealso>
     public string GetRandomSalt()
     {
-        var alg = SHA512.Create();
+        return BitConverter.ToString(RandomNumberGenerator.GetBytes(SaltSizeInBytes));
+    }
 
-        if (alg?.Hash is null)
-        {
-            return string.Empty;
-        }
+    /// <summary>
+    /// Creates the <see cref="Aes"/> instance for the given parameters with the key and the initialization vector
+    /// derived from the password and the salt value.
+    /// </summary>
+    /// <param name="aesKeySize">The <see cref="AesKeySize" /> to be used.</param>
+    /// <param name="password">The password to derive the key from.</param>
+    /// <param name="salt">The salt value to derive the key with.</param>
+    /// <param name="iterations">The number of iterations.</param>
+    /// <param name="hashAlgorithmName">The hash algorithm name.</param>
+    /// <returns>An <see cref="Aes"/> instance ready for the encryption or the decryption.</returns>
+    private static Aes CreateAes(
+        AesKeySize aesKeySize,
+        string password,
+        string salt,
+        int iterations,
+        HashAlgorithmName? hashAlgorithmName)
+    {
+        var aes = Aes.Create();
+        aes.BlockSize = BlockSizeInBits;
+        aes.KeySize = (int)aesKeySize;
 
-        alg.ComputeHash(
-            Encoding.UTF32.GetBytes(DateTime.Now.ToLongDateString() + this.random.Next(int.MaxValue) + Guid.NewGuid()));
-        return BitConverter.ToString(alg.Hash);
+        var keyLength = aes.KeySize / 8;
+        var initializationVectorLength = aes.BlockSize / 8;
+
+        // The key and the initialization vector are the first bytes of one single PBKDF2 output, the key first.
+        // The obsolete Rfc2898DeriveBytes constructor produced the same bytes with two consecutive GetBytes calls,
+        // so data encrypted by an earlier version of this library stays decryptable.
+        var derivedBytes = Rfc2898DeriveBytes.Pbkdf2(
+            password,
+            Encoding.UTF32.GetBytes(salt),
+            iterations,
+            hashAlgorithmName ?? HashAlgorithmName.SHA256,
+            keyLength + initializationVectorLength);
+
+        aes.Key = derivedBytes[..keyLength];
+        aes.IV = derivedBytes[keyLength..];
+        return aes;
     }
 }
