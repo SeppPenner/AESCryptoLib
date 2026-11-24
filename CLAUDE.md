@@ -11,9 +11,9 @@ library is the product.
 
 One solution `src/AESCryptoLib.sln` with exactly two projects:
 
-- `src/AESCryptoLib/AESCryptoLib.csproj`, the library, `TargetFrameworks` `net8.0;net10.0`, the only
+- `src/AESCryptoLib/AESCryptoLib.csproj`, the library, `TargetFrameworks` `net10.0;net11.0`, the only
   packable project.
-- `src/AESCryptoLib.Tests/AESCryptoLib.Tests.csproj`, MSTest, `net10.0`, `IsPackable` `false`, added
+- `src/AESCryptoLib.Tests/AESCryptoLib.Tests.csproj`, MSTest, `net11.0`, `IsPackable` `false`, added
   in version 1.2.3.0.
 
 Layout inside `src/AESCryptoLib`:
@@ -54,8 +54,8 @@ dotnet build src/AESCryptoLib.sln -c Release
 dotnet test src/AESCryptoLib.sln -c Release
 ```
 
-- Two target frameworks `net8.0;net10.0` in the library, `net10.0` in the test project, no
-  `RuntimeIdentifiers`. Nothing in the code is Windows specific.
+- Two target frameworks `net10.0;net11.0` in the library, `net11.0` in the test project, no
+  `RuntimeIdentifiers`, so building needs the .NET 11 SDK. Nothing in the code is Windows specific.
 - All build properties live directly in the two `.csproj` files and are duplicated there.
   `src/Directory.Build.props` adds `GenerateDocumentationFile` on top, for the test project as well.
   A `cref` that cannot be resolved therefore breaks the **test** build too, and the test project
@@ -76,8 +76,8 @@ dotnet test src/AESCryptoLib.sln -c Release
   `MSTest.TestFramework`, `coverlet.collector` and `GitVersion.MsBuild`. `dotnet test` runs 18 tests,
   they need no network and no fixture outside the repository. Never claim a test run happened without
   running it.
-- The tests only ever run against `net10.0`, `net8.0` is compile verified. Executing them on `net8.0`
-  needs a .NET 8 runtime, which is not installed on the development machine.
+- The tests only ever run against `net11.0`, `net10.0` is compile verified. Keep the test project on
+  the newest framework the library targets.
 
 ## Code conventions
 
