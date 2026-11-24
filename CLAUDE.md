@@ -153,21 +153,61 @@ Do not silently "clean up" these, they are existing behaviour:
 
 ## Releasing
 
+**Every new version is released completely.** Changelog, README, nuget.org, GitHub Packages and a
+GitHub release belong to every version, none of these steps is optional and none of them waits for
+a separate request.
+
 1. Make the change.
 2. Add an entry at the top of `Changelog.md` in the existing format:
    `* **Version 1.2.3.0 (2026-08-10)** : Short description.`
 3. Put the same text into `PackageReleaseNotes` in `src/AESCryptoLib/AESCryptoLib.csproj`, in the
    format used there: `Version 1.2.3.0 (2026-08-10): Short description.`
-4. Commit that.
-5. Tag the commit with the plain version number, no `v` prefix (`1.2.2`, `1.2.1`, ...). The existing
+4. Update `README.md` for every version. The `## Available for` list has to match the
+   `TargetFrameworks` of the library, the usage sample has to compile against the current API, and
+   nothing there may describe a state the package has left behind.
+5. Commit that.
+6. Tag the commit with the plain version number, no `v` prefix (`1.2.2`, `1.2.1`, ...). The existing
    tags are lightweight tags, create new ones the same way.
-6. Push the commits and the tag.
-7. Run `BuildAndPushPackage.bat` from the repository root.
+7. Push the commits and the tag.
+8. Only then build the package, and build it while the tag is the newest commit. GitVersion takes
+   the version from the tag plus the distance to it, so a build before the tag or after another
+   commit produces a prerelease version like `1.2.4-3+Branch.master.Sha...`, and that version would
+   end up on nuget.org. `git describe --tags` has to answer with the plain tag.
+9. Publish to nuget.org with `BuildAndPushPackage.bat`, started from the repository root (see
+   "Known quirks" for what it does and why it needs `< nul` non interactively). Call it with its full
+   path: the Claude Code shell sets `NoDefaultCurrentDirectoryInExePath=1`, so cmd does not find a
+   bare `BuildAndPushPackage.bat` in the current directory. Because it always rebuilds, it is only
+   correct as long as no commit sits on top of the tag. If one does, push the package that was built
+   from the tagged state instead, by its file name and not with the wildcard, because
+   `GeneratePackageOnBuild` leaves a `.nupkg` of every intermediate build in `bin`:
+   `dotnet nuget push HaemmerElectronics.SeppPenner.AESCryptoLib.1.2.3.nupkg -s "nuget.org" --skip-duplicate -k %NUGET_API_KEY%`
+   in `src/AESCryptoLib/bin/Release`. That command takes the matching `.snupkg` with it. A push to
+   nuget.org cannot be taken back, the version is burned even after unlisting. nuget.org needs a few
+   minutes to validate a new version before it is listed.
+10. Publish the same `.nupkg` to GitHub Packages,
+    `https://nuget.pkg.github.com/SeppPenner/index.json`. The script only reaches it if a NuGet
+    source named `github` is registered on the machine, `dotnet nuget list source` shows that. On
+    2026-11-24 only nuget.org was registered here, so the two `github` lines of the script fail and
+    the push has to be done by hand in `src/AESCryptoLib/bin/Release`:
+    `dotnet nuget push HaemmerElectronics.SeppPenner.AESCryptoLib.1.2.3.nupkg -s https://nuget.pkg.github.com/SeppPenner/index.json --skip-duplicate --api-key <token>`.
+    The API key is a GitHub token with the scope `write:packages`, for example from
+    `gh auth token`. If `gh auth status` lists no `write:packages`, the user has to run
+    `gh auth refresh -h github.com -s write:packages,read:packages`, it needs a browser login.
+    GitHub Packages takes no symbol packages, push the `.nupkg` only.
+11. Create the GitHub release:
+    `gh release create 1.2.3 -R SeppPenner/AESCryptoLib --verify-tag --latest --title "Version 1.2.3.0 (2026-08-10)" --notes-file <file>`.
+    The notes are the changelog sentence plus the line
+    `NuGet: https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.AESCryptoLib/1.2.3`. Write
+    credits as `` `@name` `` in backticks, a bare `@name` notifies that person again.
 
 The version in the `Changelog.md` has four parts (`1.2.3.0`), the tag has three (`1.2.3`).
-GitVersion turns the tag into the assembly version and into the version of the package file, so the
-tag has to exist **before** the package build. Without it the package is called `1.2.3-2.nupkg` and
-carries a prerelease version.
+GitVersion turns the tag into the assembly version and into the version of the package file, so
+without the tag the package is called `1.2.3-2.nupkg` and carries a prerelease version.
+
+nuget.org holds 1.0.0, 1.0.0.1 to 1.0.0.4, 1.0.5, 1.0.6, 1.0.8, 1.0.9 and 1.1.1 to 1.2.3, including
+1.1.10, which has no tag, while the tag 1.1.0 has no package. On 2026-11-24 no tag had a GitHub
+release yet, and GitHub Packages held 1.0.9, 1.1.1 to 1.1.5, 1.1.10 and 1.2.0 to 1.2.3, the older
+history there is incomplete.
 
 ## Git
 
