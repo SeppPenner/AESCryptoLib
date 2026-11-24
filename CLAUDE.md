@@ -204,10 +204,9 @@ The version in the `Changelog.md` has four parts (`1.2.3.0`), the tag has three 
 GitVersion turns the tag into the assembly version and into the version of the package file, so
 without the tag the package is called `1.2.3-2.nupkg` and carries a prerelease version.
 
-nuget.org holds 1.0.0, 1.0.0.1 to 1.0.0.4, 1.0.5, 1.0.6, 1.0.8, 1.0.9 and 1.1.1 to 1.2.3, including
-1.1.10, which has no tag, while the tag 1.1.0 has no package. On 2026-11-24 no tag had a GitHub
-release yet, and GitHub Packages held 1.0.9, 1.1.1 to 1.1.5, 1.1.10 and 1.2.0 to 1.2.3, the older
-history there is incomplete.
+nuget.org and GitHub Packages hold 1.0.0, 1.0.0.1 to 1.0.0.4, 1.0.5, 1.0.6, 1.0.8, 1.0.9 and 1.1.1
+to 1.2.4, including 1.1.10, which has no tag. The tag 1.1.0 of 2020 has no package and stays that
+way. Every tag has a GitHub release, the untagged versions have none. The missing versions on GitHub Packages and the releases were added on 2026-11-24.
 
 ## Git
 

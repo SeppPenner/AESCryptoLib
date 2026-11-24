@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.2.4.0 (2026-11-24)** : Removed support for Net8.0 as it is out of support, added support for Net11.0, updated NuGet packages.
 * **Version 1.2.3.0 (2026-08-10)** : Fixed GetRandomSalt always returning an empty string, replaced the obsolete Rfc2898DeriveBytes constructor, fixed the undisposed crypto objects, added unit tests, removed support for Net9.0, added support for Net10.0, updated NuGet packages.
 * **Version 1.2.2.0 (2024-11-24)** : Removed support for Net6.0, added support for Net9.0, updated NuGet packages.
 * **Version 1.2.1.0 (2024-05-16)** : Removed support for Net7.0.
